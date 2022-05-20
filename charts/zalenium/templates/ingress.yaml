@@ -19,9 +19,10 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: {{ template "zalenium.fullname" . }}
-          servicePort: {{ .Values.hub.svcPort }}
-        {{- if .Values.ingress.path }}
-        path: {{ .Values.ingress.path }}
-        {{- end }}
+          service:
+            name: {{ template "zalenium.fullname" . }}
+            port: 
+              number: {{ .Values.hub.svcPort }}
+        pathType: Prefix
+        path: /
 {{- end -}}

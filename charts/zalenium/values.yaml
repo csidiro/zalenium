@@ -69,6 +69,7 @@ hub:
   ##   Values: ClientIP or None
   ## ref: https://kubernetes.io/docs/user-guide/services/
   serviceSessionAffinity: "None"
+  clusterIP: 10.0.57.49
 
   # Annotations to be added to the service.
   ##

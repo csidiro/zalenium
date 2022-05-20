@@ -14,6 +14,9 @@ spec:
   loadBalancerSourceRanges: {{ .Values.hub.serviceSourceRanges }}
   {{- end }}
   sessionAffinity: {{ .Values.hub.serviceSessionAffinity | quote }}
+  {{- if .Values.hub.clusterIP }}
+  clusterIP: {{ .Values.hub.clusterIP | quote }}
+  {{- end }}
   ports:
   - name: hub
     port: {{ .Values.hub.svcPort }}
